@@ -73,6 +73,10 @@
         .about-text-container {
             margin-left : 64px;
 
+            @media ('max-width: 800px') {
+                margin-left: 0;
+            }
+
             .about-text {
                 font-family : 'ABeeZee', sans-serif;
                 color       : #a3a1a1;

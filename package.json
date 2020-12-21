@@ -5,11 +5,13 @@
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
-    "start": "nuxt start",
+    "start": "nuxt-start",
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "nuxt": "^2.14.0"
+    "@nuxtjs/prismic": "^1.2.4",
+    "nuxt": "^2.14.0",
+    "nuxt-start": "^2.14.12"
   },
   "devDependencies": {
     "@nuxtjs/style-resources": "^1.0.0",

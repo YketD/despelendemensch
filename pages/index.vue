@@ -1,14 +1,15 @@
 <template>
-    <div class="container">
+    <div class="podcast-container">
         <div class="podcast-grid">
-            <nuxt-link v-for="podcast in podcasts" :to="'podcasts' + podcast.link">
+            <nuxt-link v-for="podcast in podcasts" :to="'podcasts/' + podcast.uid">
                 <podcast-card
-                    :title="podcast.title"
-                    :img="podcast.img"
-                    :sub-text="podcast.subText"
+                    :title="podcast.data.title"
+                    :img="podcast.data.podcast_afbeelding"
+                    :sub-text="podcast.data.subtitle"
                     class="podcast-card" />
             </nuxt-link>
         </div>
+        {{ document }}
 
     </div>
 </template>
@@ -25,35 +26,30 @@
         },
         data() {
             return {
-                podcasts: [
-                    {
-                        title: '3000 KM fietsen in 18 dagen',
-                        img: 'https://picsum.photos/1200?grayscale',
-                        link: '/abc',
-                        subText: 'MENSCH 1: Steven Borghouts'
-                    }, {
-                        title: 'BILLY EN ZIJN LIEFDE VOOR 3D BRILLEN ',
-                        img: 'https://picsum.photos/650?grayscale',
-                        link: '/abc',
-                        subText: 'MENSCH 2: Billy Brabo'
-                    }, {
-                        title: 'WHEELIE QUEEN SUMMER ‘69',
-                        img: 'https://picsum.photos/500?grayscale',
-                        link: '/abc',
-                        subText: 'MENSCH 3: Gerda Assink'
-                    }, {
-                        title: 'test',
-                        img: 'https://picsum.photos/450?grayscale',
-                        link: '/abc',
-                        subText: 'MENSCH 3: Gerda Assink'
-                    },
-                ]
+                podcasts: [],
             }
-        }
+        },
+        async asyncData({ $prismic, error }) {
+            try {
+                const podcasts = (await $prismic.api.query(
+                    $prismic.predicates.at('document.type', 'podcast')
+                )).results;
+                return {
+                    podcasts
+                }
+            } catch (e) {
+                console.log(e)
+                error({ statusCode: 404, message: 'Page not found' })
+            }
+        },
     }
 </script>
 
 <style lang="scss">
+    podcast-container {
+        align-items: start;
+    }
+
     .container {
         margin          : 0 auto;
         min-height      : 100vh;
@@ -61,6 +57,10 @@
         justify-content : center;
         align-items     : center;
         text-align      : center;
+
+        @media ('max-width: 500px') {
+            min-height: 0;
+        }
     }
 
     .podcast-grid {
@@ -68,8 +68,18 @@
         grid-template-columns : repeat(3, 1fr);
         grid-gap              : 24px;
 
+        @media ('max-width : 1280px') {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @media ('max-width : 800px') {
+            grid-template-columns: repeat(1, 1fr);
+        }
         .podcast-card {
             width : 400px;
+
+            @media ('max-width: 500px') {
+                width: 100% ;
+            }
         }
     }
 

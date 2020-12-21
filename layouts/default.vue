@@ -1,7 +1,9 @@
 <template>
     <div class="main-container">
         <menu-bar></menu-bar>
-        <Nuxt />
+        <transition name="fade" mode="out-in">
+            <Nuxt />
+        </transition>
     </div>
 </template>
 
@@ -40,6 +42,17 @@
             margin-top: 24px;
         }
 
+        @media(max-width: 1280px) {
+            margin: 42px;
+        }
+
+    }
+
+    .fade-enter-active, .fade-leave-active {
+        transition: opacity 1s;
+    }
+    .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+        opacity: 0;
     }
 </style>
 <script>
