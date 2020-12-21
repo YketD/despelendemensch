@@ -10,6 +10,12 @@ export default {
     */
     target: 'server',
     /*
+    ** The server settings
+     */
+    server: {
+        port: 3003,
+    },
+    /*
     ** Headers of the page
     ** See https://nuxtjs.org/api/configuration-head
     */
