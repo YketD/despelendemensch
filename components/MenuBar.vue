@@ -53,9 +53,9 @@
                 mobileMenuIsOpen: false,
             }
         },
-        methods: {
-            openMobileMenu() {
-
+        watch: {
+            '$route' () {
+                this.mobileMenuIsOpen = false;
             }
         }
     }
