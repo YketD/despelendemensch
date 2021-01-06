@@ -24,12 +24,13 @@
 <style lang="scss" scoped>
 
     .podcast-container {
-        position    : relative;
-        font-family : 'ABeeZee', sans-serif;
-        color       : black;
-        display: flex;
-        flex-direction: column;
-        margin: auto    ;
+        position       : relative;
+        font-family    : 'ABeeZee', sans-serif;
+        color          : black;
+        display        : flex;
+        flex-direction : column;
+        margin         : auto;
+
         img {
             max-width : 100%;
             min-width : 100%;
@@ -38,8 +39,9 @@
         .date-label {
             text-decoration : none !important;
             color           : #9d9d9d;
-            text-align: right;
-            margin-bottom: 6px;
+            text-align      : right;
+            margin-bottom   : 6px;
+            font-weight: 300    ;
         }
 
         .label {
@@ -47,6 +49,7 @@
             display         : inline-block;
             color           : #9d9d9d;
             text-decoration : none !important;
+            font-size       : 16px;
 
             ::v-deep h2 {
                 font-weight : 200;

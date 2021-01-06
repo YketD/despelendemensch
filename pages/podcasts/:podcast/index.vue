@@ -6,13 +6,14 @@
 
         <div class="description-container">
             <prismic-rich-text class="padding" :field="podcast.data.title"></prismic-rich-text>
-            <prismic-rich-text class="padding" :field="podcast.data.subtitle"></prismic-rich-text>
-            <prismic-rich-text class="padding" :field="podcast.data.description"></prismic-rich-text>
             <span class="padding" v-if="podcast.data.podcast_links">Luisteren via:&nbsp;
                 <a v-for="podcastLink in podcast.data.podcast_links" :href="podcastLink.link.url">
                      <prismic-rich-text :field="podcastLink.link_text" />
                 </a>
             </span>
+            <prismic-rich-text class="padding" :field="podcast.data.subtitle"></prismic-rich-text>
+            <prismic-rich-text class="padding" :field="podcast.data.description"></prismic-rich-text>
+
         </div>
 
     </div>
@@ -46,14 +47,14 @@
 <style lang="scss" scoped>
     .podcast-container {
         display               : grid;
-        grid-template-columns : .5fr 1fr;
+        grid-template-columns : 1fr 1fr;
         width                 : 100%;
 
         @media (max-width : 1440px) {
             grid-template-columns : .75fr 1fr;
         }
 
-        @media (max-width : 800px) {
+        @media (max-width : 500px) {
             grid-template-columns : 1fr;
         }
 
@@ -61,8 +62,17 @@
             position : relative;
             width    : 100%;
 
+            @media ('max-width:500px') {
+                display: flex;
+                justify-content: center;
+            }
+
             img {
                 width : 100%;
+
+                @media ('max-width: 500px') {
+                    width: 60%;
+                }
             }
         }
     }
@@ -71,19 +81,37 @@
         ::v-deep div h1 {
             color           : #bac4de;
             text-decoration : none;
-            font-size       : 34px;
+            font-size       : 22px;
+
+            @media ('max-width: 500px') {
+                font-size: 20px;
+            }
         }
 
         ::v-deep div h2 {
             color       : #9c9c9c;
             font-family : 'ABeeZee', sans-serif;
-            font-size   : 30px;
+            font-size   : 18px;
+            @media ('max-width: 500px') {
+                font-size: 16px;
+            }
         }
 
         ::v-deep div p {
             font-family : 'ABeeZee', sans-serif;
             color       : #9c9c9c;
-            font-size   : 26px;
+            font-size   : 16px;
+            @media ('max-width: 500px') {
+                font-size: 15px;
+            }
+        }
+        ::v-deep div span {
+            font-family : 'ABeeZee', sans-serif;
+            color       : #9c9c9c;
+            font-size   : 16px;
+            @media ('max-width: 500px') {
+                font-size: 15px;
+            }
         }
 
         a {
@@ -94,7 +122,10 @@
             display     : flex;
             font-family : 'ABeeZee', sans-serif;
             color       : #9c9c9c;
-            font-size   : 34px;
+            font-size   : 18px;
+            @media ('max-width: 500px') {
+                font-size: 16px;
+            }
         }
 
         .padding {
@@ -102,22 +133,9 @@
         }
 
         @media ('max-width: 1380px') {
-            ::v-deep div {
-                p {
-                    font-size : 20px;
-                }
-                h1 {
-                    font-size: 26px;
-                }
-                h2 {
-                    font-size: 24px;
-                }
-            }
+
             .padding {
                 padding: 6px 12px;
-            }
-            span {
-                font-size: 24px;
             }
         }
     }

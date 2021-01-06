@@ -1,8 +1,7 @@
 <template>
     <div class="about-container">
         <div class="image-container">
-            <img src="~/assets/img/steven.png">
-            <span class="name-label">STEVEN BORGHOUTS</span>
+            <img src="~/assets/img/stevenborghoutsWithText.jpg">
         </div>
         <div class="about-text-container">
             <span class="about-text">
@@ -24,14 +23,6 @@
         grid-template-columns : 1fr 1fr;
         width                 : 100%;
 
-        @media (max-width: 1440px) {
-            grid-template-columns: 600px auto;
-        }
-
-        @media (max-width: 1150px) {
-            grid-template-columns: 400px auto;
-        }
-
         @media (max-width: 800px) {
             grid-template-columns: 1fr;
         }
@@ -39,54 +30,41 @@
         .image-container {
             position : relative;
             width    : 100%;
+            display: flex;
+            justify-content: center;
 
             img {
-                width : 80%
-            }
-
-            .name-label {
-                position     : absolute;
-                right        : -45px;
-                top          : 130px;
-                font-size    : 36px;
-                background   : #a0bd9f60;
-                padding      : 18px;
-                padding-left : 136px;
-                color        : #8e8e8e;
-
-                @media (max-width: 1440px){
-                    top: 110px;
-                    padding: 12px;
-                    padding-left: 72px;
-                    right: -20px;
-                }
-
-                @media (max-width: 1150px) {
-                    top: 72px;
-                    font-size: 24px;
-                    padding: 6px;
-                    padding-left: 52px;
+                width : 80%;
+                @media (max-width: 800px) {
+                    width: 60%;
+                    margin-bottom: 24px;
                 }
             }
         }
 
         .about-text-container {
-            margin-left : 64px;
+            margin         : 42px;
+            font-family    : 'ABeeZee', sans-serif;
+            font-size      : 20px;
+            font-weight    : 300;
+            line-height    : 30px;
+            list-style     : none;
+            color          : #a3a1a1;
+            display        : flex;
+            flex-direction : column;
+            padding: 0;
 
-            @media ('max-width: 800px') {
-                margin-left: 0;
+            @media (max-width : 1080px) {
+                font-size      : 17px;
+                line-height    : 28px;
+
+                margin         : 0 22px 22px;
             }
 
-            .about-text {
-                font-family : 'ABeeZee', sans-serif;
-                color       : #a3a1a1;
-                font-size   : 32px;
+            @media (max-width : 800px) {
+                font-size : 15px;
 
-                @media (max-width: 1440px) {
-                    font-size: 22px;
-                }@media (max-width: 1150px) {
-                    font-size: 18px;
-                }
+                margin    : 0 12px 12px;
             }
         }
     }

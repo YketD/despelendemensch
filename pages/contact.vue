@@ -36,11 +36,17 @@
             width    : 100%;
             text-align: center;
 
+            @media (max-width: 500px) {
+                display         : flex;
+                justify-content : center;
+                margin-bottom: 24px;
+            }
+
             img {
                 width : 80%;
 
                 @media (max-width: 500px) {
-                    width: 100%
+                    width: 60%;
                 }
             }
         }
@@ -69,7 +75,6 @@
                 }
                 @media (max-width : 800px) {
                     font-size : 18px;
-                    width: 100%;
                     text-align: center;
                 }
             }
@@ -98,19 +103,6 @@
 
             @media ('max-width: 800px') {
                 margin-left : 0;
-            }
-
-            .about-text {
-                font-family : 'ABeeZee', sans-serif;
-                color       : #a3a1a1;
-                font-size   : 32px;
-
-                @media (max-width : 1440px) {
-                    font-size : 22px;
-                }
-                @media (max-width : 1150px) {
-                    font-size : 18px;
-                }
             }
         }
     }

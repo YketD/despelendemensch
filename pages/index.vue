@@ -47,9 +47,6 @@
 </script>
 
 <style lang="scss">
-    .podcast-grid {
-    }
-
     .container {
         margin          : 0 auto;
         min-height      : 100vh;
@@ -63,14 +60,19 @@
         }
     }
 
-    .no-underline{
+    .no-underline {
         text-decoration : none !important;
     }
 
     .podcast-grid {
         display               : grid;
-        grid-template-columns : repeat(3, 1fr);
+        grid-template-columns : repeat(4, 1fr);
         grid-gap              : 24px;
+        justify-content       : center;
+
+        @media ('max-width: 1080px') {
+            grid-template-columns : repeat(3, 1fr);
+        }
 
         @media ('max-width :720px') {
             grid-template-columns : repeat(2, 1fr);

@@ -70,7 +70,6 @@
         display         : flex;
         justify-content : space-between;
         margin-bottom   : 64px;
-        margin-left     : -64px;
 
         @media ('max-width: 1280px') {
             margin-left : 0;
@@ -81,7 +80,7 @@
         }
 
         .logo {
-            width : 172px;
+            width : 192px;
 
             @media(max-width : 1080px) {
                 width : 152px
@@ -116,7 +115,7 @@
                         font-size : 18px;
                     }
                     @media ('max-width: 720px') {
-                        font-size : 15px;
+                        font-size : 16px;
                     }
 
                     a {
@@ -124,7 +123,7 @@
                     }
 
                     .nuxt-link-active {
-                        border-bottom : 3px solid;
+                        border-bottom : 2px solid;
                     }
                 }
             }
@@ -158,7 +157,7 @@
                 width: 100%;
                 text-align: center;
                 padding: 6px;
-                font-size: 32px;
+                font-size: 18px;
             }
         }
     }
