@@ -6,7 +6,7 @@
             </div>
             <nav class="navigation">
                 <div @click="mobileMenuIsOpen = !mobileMenuIsOpen" class="hamburger">
-                    <svg viewBox="0 0 100 80" width="60" height="60">
+                    <svg viewBox="0 0 100 80" width="30" height="30">
                         <rect fill="#A0BD9F" width="100" height="15"></rect>
                         <rect fill="#BAC4DE" y="30" width="100" height="15"></rect>
                         <rect fill="#E19584" y="60" width="100" height="15"></rect>
@@ -65,6 +65,7 @@
     .menu {
         position : relative;
     }
+
     .menu-container {
         display         : flex;
         justify-content : space-between;
@@ -75,12 +76,16 @@
             margin-left : 0;
         }
 
-        @media ('max-width: 800px') {
+        @media ('max-width: 500px') {
             margin-bottom: 12px;
         }
 
         .logo {
-            width : 256px;
+            width : 172px;
+
+            @media(max-width : 1080px) {
+                width : 152px
+            }
 
             @media(max-width : 500px) {
                 width : 50%;
@@ -98,17 +103,20 @@
                 ul {
                 display : flex;
 
-                @media ('max-width: 800px') {
+                @media ('max-width: 500px') {
                     display : none;
                 }
 
                 li {
                     padding         : 20px;
                     list-style-type : none;
-                    font-size       : 36px;
+                    font-size       : 22px;
 
-                    @media ('max-width: 1020px') {
-                        font-size : 24px;
+                    @media ('max-width: 1080px') {
+                        font-size : 18px;
+                    }
+                    @media ('max-width: 720px') {
+                        font-size : 15px;
                     }
 
                     a {
@@ -123,15 +131,13 @@
 
             .hamburger {
                 display : none;
-                @media (max-width : 800px) {
+                @media (max-width : 500px) {
                     display : flex;
                     justify-content: center;
                     align-items: center;
                     width: 100%;
                 }
             }
-
-
         }
     }
 

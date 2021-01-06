@@ -1,10 +1,11 @@
 <template>
     <div class="podcast-container">
         <div class="podcast-grid">
-            <nuxt-link v-for="podcast in podcasts" :to="'podcasts/' + podcast.uid">
+            <nuxt-link v-for="podcast in podcasts" class="no-underline" :to="'podcasts/' + podcast.uid">
                 <podcast-card
                     :title="podcast.data.title"
                     :img="podcast.data.podcast_afbeelding"
+                    :date="podcast.first_publication_date"
                     :sub-text="podcast.data.subtitle"
                     class="podcast-card" />
             </nuxt-link>
@@ -46,8 +47,7 @@
 </script>
 
 <style lang="scss">
-    podcast-container {
-        align-items: start;
+    .podcast-grid {
     }
 
     .container {
@@ -59,8 +59,12 @@
         text-align      : center;
 
         @media ('max-width: 500px') {
-            min-height: 0;
+            min-height : 0;
         }
+    }
+
+    .no-underline{
+        text-decoration : none !important;
     }
 
     .podcast-grid {
@@ -68,17 +72,20 @@
         grid-template-columns : repeat(3, 1fr);
         grid-gap              : 24px;
 
-        @media ('max-width : 1280px') {
-            grid-template-columns: repeat(2, 1fr);
+        @media ('max-width :720px') {
+            grid-template-columns : repeat(2, 1fr);
         }
-        @media ('max-width : 800px') {
-            grid-template-columns: repeat(1, 1fr);
+
+        @media ('max-width : 400px') {
+            grid-template-columns : repeat(1, 1fr);
         }
+
         .podcast-card {
-            width : 400px;
+            max-width : 300px;
+            min-width : 150px;
 
             @media ('max-width: 500px') {
-                width: 100% ;
+                width : 100%;
             }
         }
     }

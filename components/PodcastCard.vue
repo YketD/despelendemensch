@@ -1,8 +1,8 @@
 <template>
     <div class="podcast-container">
         <img :src="img.url" />
+        <span class="date-label">{{ formattedDate }}</span>
         <prismic-rich-text :field="subText" class="label">{{ subText }}</prismic-rich-text>
-        <prismic-rich-text :field="title" class="subtext">{{ title }}</prismic-rich-text>
     </div>
 </template>
 
@@ -11,46 +11,46 @@
 
     export default {
         name: "PodcastCard",
-        props: ['title', 'img', 'subText']
+        props: ['img', 'subText', 'date'],
+        computed: {
+            formattedDate() {
+                return new Date(this.date).toLocaleDateString('NL-nl',
+                    { year: 'numeric', month: 'long', day: 'numeric' })
+            }
+        }
     }
 </script>
 
 <style lang="scss" scoped>
 
     .podcast-container {
-        position : relative;
-
+        position    : relative;
+        font-family : 'ABeeZee', sans-serif;
+        color       : black;
+        display: flex;
+        flex-direction: column;
+        margin: auto    ;
         img {
             max-width : 100%;
             min-width : 100%;
         }
 
-        .label {
-            position   : absolute;
-            right      : 0;
-            top        : 54px;
-            max-width  : 70%;
-            font-size  : 36px;
-            background : rgba(160, 189, 159, .6);
-            color      : #ffffff;
-            padding    : 12px;
-
-            @media ('max-width: 500px') {
-                font-size : 24px;
-            }
-            @media ('max-width: 360px') {
-                font-size : 12px;
-            }
-        }
-
-        .subtext {
-            text-align      : left;
-            font-family     : 'ABeeZee', sans-serif;
-            display         : inline-block;
+        .date-label {
             text-decoration : none !important;
             color           : #9d9d9d;
+            text-align: right;
+            margin-bottom: 6px;
+        }
 
-            ::v-deep h1 {
+        .label {
+            text-align      : left;
+            display         : inline-block;
+            color           : #9d9d9d;
+            text-decoration : none !important;
+
+            ::v-deep h2 {
+                font-weight : 200;
+
                 @media ('max-width: 500px') {
                     font-size : 24px;
                 }
