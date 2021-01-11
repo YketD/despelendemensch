@@ -6,6 +6,7 @@
                 <Nuxt />
             </transition>
         </div>
+        <footer-info ></footer-info>
     </div>
 </template>
 

@@ -6,7 +6,7 @@
                     :title="podcast.data.title"
                     :img="podcast.data.podcast_afbeelding"
                     :date="podcast.first_publication_date"
-                    :sub-text="podcast.data.subtitle"
+                    :sub-text="podcast.data.title"
                     class="podcast-card" />
             </nuxt-link>
         </div>
@@ -66,13 +66,9 @@
 
     .podcast-grid {
         display               : grid;
-        grid-template-columns : repeat(4, 1fr);
+        grid-template-columns : repeat(3, 1fr);
         grid-gap              : 24px;
         justify-content       : center;
-
-        @media ('max-width: 1080px') {
-            grid-template-columns : repeat(3, 1fr);
-        }
 
         @media ('max-width :720px') {
             grid-template-columns : repeat(2, 1fr);

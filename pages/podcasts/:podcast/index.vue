@@ -13,7 +13,6 @@
             </span>
             <prismic-rich-text class="padding" :field="podcast.data.subtitle"></prismic-rich-text>
             <prismic-rich-text class="padding" :field="podcast.data.description"></prismic-rich-text>
-
         </div>
 
     </div>
@@ -63,15 +62,15 @@
             width    : 100%;
 
             @media ('max-width:500px') {
-                display: flex;
-                justify-content: center;
+                display    : inline-block;
+                text-align : center
             }
 
             img {
                 width : 80%;
 
                 @media ('max-width: 500px') {
-                    width: 60%;
+                    width : 60%;
                 }
             }
         }
@@ -82,9 +81,10 @@
             color           : #bac4de;
             text-decoration : none;
             font-size       : 22px;
+            font-weight     : 100;
 
             @media ('max-width: 500px') {
-                font-size: 20px;
+                font-size : 20px;
             }
         }
 
@@ -92,8 +92,10 @@
             color       : #9c9c9c;
             font-family : 'ABeeZee', sans-serif;
             font-size   : 18px;
+            font-weight : 100;
+
             @media ('max-width: 500px') {
-                font-size: 16px;
+                font-size : 16px;
             }
         }
 
@@ -101,16 +103,20 @@
             font-family : 'ABeeZee', sans-serif;
             color       : #9c9c9c;
             font-size   : 16px;
+            font-weight : 100;
             @media ('max-width: 500px') {
-                font-size: 15px;
+                font-size : 15px;
             }
         }
+
         ::v-deep div span {
             font-family : 'ABeeZee', sans-serif;
             color       : #9c9c9c;
             font-size   : 16px;
+            font-weight : 100;
+
             @media ('max-width: 500px') {
-                font-size: 15px;
+                font-size : 15px;
             }
         }
 
@@ -123,8 +129,10 @@
             font-family : 'ABeeZee', sans-serif;
             color       : #9c9c9c;
             font-size   : 18px;
+            font-weight : 100;
+
             @media ('max-width: 500px') {
-                font-size: 16px;
+                font-size : 16px;
             }
         }
 
@@ -135,7 +143,7 @@
         @media ('max-width: 1380px') {
 
             .padding {
-                padding: 6px 12px;
+                padding : 6px 12px;
             }
         }
     }

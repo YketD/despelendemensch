@@ -1,6 +1,6 @@
 <template>
     <div class="podcast-container">
-        <img :src="img.url" />
+        <img alt="podcast image" :src="img.url" />
         <span class="date-label">{{ formattedDate }}</span>
         <prismic-rich-text :field="subText" class="label">{{ subText }}</prismic-rich-text>
     </div>
@@ -32,16 +32,21 @@
         margin         : auto;
 
         img {
-            max-width : 100%;
-            min-width : 100%;
+            max-width          : 100%;
+            min-width          : 100%;
+            -webkit-box-shadow : rgba(0, 0, 0, 0.3) 0 1px 3px;
+            -moz-box-shadow    : rgba(0, 0, 0, 0.3) 0 1px 3px;
+            box-shadow         : rgba(0, 0, 0, 0.3) 0 1px 3px;
         }
 
         .date-label {
             text-decoration : none !important;
             color           : #9d9d9d;
             text-align      : right;
-            margin-bottom   : 6px;
-            font-weight: 300    ;
+            font-weight     : 300;
+            font-size       : 13px;
+            line-height     : 15px;
+            margin-top: 2px;
         }
 
         .label {
@@ -49,10 +54,11 @@
             display         : inline-block;
             color           : #9d9d9d;
             text-decoration : none !important;
-            font-size       : 16px;
+            margin-top      : 2px;
 
-            ::v-deep h2 {
+            ::v-deep h1 {
                 font-weight : 200;
+                font-size   : 19px;
 
                 @media ('max-width: 500px') {
                     font-size : 24px;
@@ -61,7 +67,6 @@
                     font-size : 16px;
                 }
             }
-
         }
     }
 </style>

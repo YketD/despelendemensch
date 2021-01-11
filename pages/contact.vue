@@ -37,7 +37,7 @@
             text-align: center;
 
             @media (max-width: 500px) {
-                display         : flex;
+                display         : inline-block;
                 justify-content : center;
                 margin-bottom: 24px;
             }
