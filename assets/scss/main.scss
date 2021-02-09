@@ -1,2 +1,6 @@
 @import "fonts.scss";
 @import "main-layout";
+
+html {
+    overflow-y: scroll;
+}

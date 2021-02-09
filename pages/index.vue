@@ -5,7 +5,6 @@
                 <podcast-card
                     :title="podcast.data.title"
                     :img="podcast.data.podcast_afbeelding"
-                    :date="podcast.first_publication_date"
                     :sub-text="podcast.data.title"
                     class="podcast-card" />
             </nuxt-link>

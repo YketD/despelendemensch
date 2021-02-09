@@ -13,12 +13,12 @@
                     </svg>
                 </div>
 
-                <ul>
+                <ul class="menu-options">
                     <li>
                         <nuxt-link style="color: #a0bd9f" to="/about">ABOUT</nuxt-link>
                     </li>
-                    <li >
-                        <nuxt-link  style="color: #bac4de" to="/" exact>AFLEVERINGEN</nuxt-link>
+                    <li>
+                        <nuxt-link style="color: #bac4de" to="/" exact>AFLEVERINGEN</nuxt-link>
                     </li>
                     <li>
                         <nuxt-link style="color: #e19584" to="/contact">CONTACT</nuxt-link>
@@ -29,18 +29,18 @@
         </div>
         <transition name="slide">
             <div v-if="mobileMenuIsOpen" class="mobile-menu">
-            <ul>
-                <li>
-                    <nuxt-link style="color: #a0bd9f" to="/about">ABOUT</nuxt-link>
-                </li>
-                <li>
-                    <nuxt-link style="color: #bac4de" to="/" exact>AFLEVERINGEN</nuxt-link>
-                </li>
-                <li>
-                    <nuxt-link style="color: #e19584" to="/contact">CONTACT</nuxt-link>
-                </li>
-            </ul>
-        </div>
+                <ul>
+                    <li>
+                        <nuxt-link style="color: #a0bd9f" to="/about">ABOUT</nuxt-link>
+                    </li>
+                    <li>
+                        <nuxt-link style="color: #bac4de" to="/" exact>AFLEVERINGEN</nuxt-link>
+                    </li>
+                    <li>
+                        <nuxt-link style="color: #e19584" to="/contact">CONTACT</nuxt-link>
+                    </li>
+                </ul>
+            </div>
         </transition>
     </div>
 </template>
@@ -54,7 +54,7 @@
             }
         },
         watch: {
-            '$route' () {
+            '$route'() {
                 this.mobileMenuIsOpen = false;
             }
         }
@@ -76,7 +76,7 @@
         }
 
         @media ('max-width: 500px') {
-            margin-bottom: 12px;
+            margin-bottom : 12px;
         }
 
         .logo {
@@ -99,8 +99,25 @@
             display         : flex;
             text-decoration : none;
 
-                ul {
+            ul {
                 display : flex;
+                position: sticky;
+                top: 30px;
+                padding-top: 0px;
+                right: 18vw;
+                z-index: 10;
+                background: rgba(255,255,255,0.7);
+                @media ('max-width: 1650px') {
+                    right: 13vw;
+                }@media ('max-width: 1550px') {
+                    right: 8vw;
+                }@media ('max-width: 1400px') {
+                    right: 2vw;
+                top: 40px;
+                }@media ('max-width: 800px') {
+                    right: 2vw;
+                top: 50px;
+                }
 
                 @media ('max-width: 500px') {
                     display : none;
@@ -131,44 +148,44 @@
             .hamburger {
                 display : none;
                 @media (max-width : 500px) {
-                    display : flex;
-                    justify-content: center;
-                    align-items: center;
-                    width: 100%;
+                    display         : flex;
+                    justify-content : center;
+                    align-items     : center;
+                    width           : 100%;
                 }
             }
         }
     }
 
     .mobile-menu {
-        transition: height .5s ;
-        width   : 100%;
+        transition : height .5s;
+        width      : 100%;
 
         ul {
-            list-style-type: none;
-            padding: 0;
-            display: flex;
-            justify-content: space-evenly;
-            height: 200px;
-            flex-direction: column;
-            box-shadow: -6px 3px -6px rgba(0,0,0,0.16), -6px 3px 6px rgba(0,0,0,0.23);
+            list-style-type : none;
+            padding         : 0;
+            display         : flex;
+            justify-content : space-evenly;
+            height          : 200px;
+            flex-direction  : column;
+            box-shadow      : -6px 3px -6px rgba(0, 0, 0, 0.16), -6px 3px 6px rgba(0, 0, 0, 0.23);
 
             li {
-                width: 100%;
-                text-align: center;
-                padding: 6px;
-                font-size: 18px;
+                width      : 100%;
+                text-align : center;
+                padding    : 6px;
+                font-size  : 18px;
             }
         }
     }
 
     .slide-enter-to, .slide-leave {
-        height : 200px;
-        overflow   : hidden;
+        height   : 200px;
+        overflow : hidden;
     }
 
     .slide-enter, .slide-leave-to {
-        overflow   : hidden;
-        height : 0;
+        overflow : hidden;
+        height   : 0;
     }
 </style>

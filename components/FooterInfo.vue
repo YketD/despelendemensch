@@ -1,8 +1,12 @@
 <template>
-<footer>
-    <a href="http://test.despelendemensch.nl"><img src="@/assets/img/instagram.svg" /></a>
-    <a href="http://test.despelendemensch.nl"><img src="@/assets/img/facebook.svg" /></a>
-</footer>
+    <footer>
+        <a href="http://test.despelendemensch.nl">
+            <img src="@/assets/img/instagram.svg" />
+        </a>
+        <a href="http://test.despelendemensch.nl">
+            <img src="@/assets/img/facebook.svg" />
+        </a>
+    </footer>
 </template>
 
 <script>
@@ -13,13 +17,14 @@
 
 <style scoped>
     footer {
-        width: 100%;
-        height: 100%;
-        text-align: right;
+        width      : 100%;
+        height     : 100%;
+        text-align : right;
     }
+
     img {
-        width: 30px;
-        height: 31px;
+        width  : 30px;
+        height : 31px;
     }
 
 </style>

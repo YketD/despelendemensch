@@ -1,7 +1,6 @@
 <template>
     <div class="podcast-container">
         <img alt="podcast image" :src="img.url" />
-        <span class="date-label">{{ formattedDate }}</span>
         <prismic-rich-text :field="subText" class="label">{{ subText }}</prismic-rich-text>
     </div>
 </template>
@@ -11,7 +10,7 @@
 
     export default {
         name: "PodcastCard",
-        props: ['img', 'subText', 'date'],
+        props: ['img', 'subText'],
         computed: {
             formattedDate() {
                 return new Date(this.date).toLocaleDateString('NL-nl',
@@ -54,11 +53,11 @@
             display         : inline-block;
             color           : #9d9d9d;
             text-decoration : none !important;
-            margin-top      : 2px;
+            margin-top      : 6px;
 
             ::v-deep h1 {
                 font-weight : 200;
-                font-size   : 19px;
+                font-size   : 21px;
 
                 @media ('max-width: 500px') {
                     font-size : 24px;
